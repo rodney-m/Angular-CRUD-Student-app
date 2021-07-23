@@ -1,0 +1,12 @@
+.Home{
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)),
+    url('../../../shared/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-floating{
+    margin: 1rem 0;
+}

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row mt-3 pt-5">
+    <div class="col-md-7">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">firstname</th>
+            <th scope="col">lastname</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students; let index = index"
+            (click)="onEdit(index)">
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>
+              <button mat-icon-button color="warn" (click)="onDelete(index)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">
+        <form class="card p-5" #login="ngForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+               type="text" 
+               class="form-control" 
+               name="name" 
+               placeholder="Name" 
+               [(ngModel)]="newStudentFn">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input
+               type="text" 
+               class="form-control" 
+               name="lastName" 
+               placeholder="Last Name"
+               [(ngModel)]="newStudentLn">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+               type="number" 
+               class="form-control" 
+               name="age" 
+               placeholder="Age"
+               [(ngModel)]="newStudentAge">
+            </div>
+            <div class="form-group" class="mb-3">
+              <label for="gender">Select Gender</label>
+              <select class="form-control" name="gender" [(ngModel)]="newStudentGndr">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <button mat-raised-button color="primary" (click)="onUpdate($event)" >
+                Update
+              </button>
+          </form>
+    </div>
+  </div>
+</div>
