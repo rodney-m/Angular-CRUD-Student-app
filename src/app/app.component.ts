@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SStudentu } from '@studentapp-libraries';
+import { SStudent } from '@studentapp-libraries';
 
 @Component({
   selector: 'app-root',
